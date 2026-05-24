@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EVA Veritas — Descarga | ARCorp / MIA</title>
+<meta name="description" content="EVA Veritas — Lectura crítica y verificación de información. Descarga gratuita.">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#F9F9F7;color:#0F0F0F;min-height:100vh}
+nav{position:fixed;top:0;left:0;right:0;height:56px;background:rgba(249,249,247,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(15,15,15,0.1);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2rem}
+.nav-logo{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;letter-spacing:.06em;color:#0F0F0F;text-decoration:none}
+.nav-logo em{font-style:normal;color:#C41C1C}
+.nav-pill{font-size:11px;font-weight:500;background:#FCEAEA;color:#C41C1C;padding:4px 10px;border-radius:99px;border:1px solid rgba(196,28,28,.18)}
+.hero{padding:120px 2rem 72px;max-width:860px;margin:0 auto;text-align:center}
+.hero-eye{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#C41C1C;margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:10px}
+.hero-eye::before,.hero-eye::after{content:'';width:36px;height:1px;background:rgba(196,28,28,.35)}
+h1{font-family:'Syne',sans-serif;font-size:clamp(48px,9vw,88px);font-weight:800;line-height:.92;letter-spacing:-.03em;margin-bottom:6px}
+h1 em{font-style:normal;color:#C41C1C}
+.hero-sub{font-family:'Syne',sans-serif;font-size:16px;color:rgba(15,15,15,.6);letter-spacing:.05em;text-transform:uppercase;margin-bottom:28px}
+.hero-desc{font-size:17px;color:rgba(15,15,15,.6);max-width:500px;margin:0 auto 44px;line-height:1.75}
+.hero-pills{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.hp{font-size:12px;color:rgba(15,15,15,.6);background:#fff;border:1px solid rgba(15,15,15,.1);border-radius:99px;padding:5px 12px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(15,15,15,.1),transparent)}
+.selector{max-width:820px;margin:0 auto;padding:64px 2rem 80px}
+.step-q{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:12px;margin-bottom:32px}
+.card{padding:20px 18px;background:#fff;border:1px solid rgba(15,15,15,.1);border-radius:12px;cursor:pointer;transition:all .15s;text-align:left}
+.card:hover{border-color:rgba(15,15,15,.3);box-shadow:0 2px 12px rgba(0,0,0,.05);transform:translateY(-1px)}
+.card.active{border:2px solid #C41C1C;background:#FCEAEA}
+.card-icon{font-size:24px;margin-bottom:10px;display:block}
+.card-name{font-size:14px;font-weight:500;display:block;margin-bottom:3px}
+.card-note{font-size:12px;color:rgba(15,15,15,.55);display:block;line-height:1.45}
+.s2wrap{transition:opacity .2s}
+.s2wrap.off{opacity:.25;pointer-events:none}
+.dl{display:none;margin-top:8px}
+.dl.on{display:block;animation:up .22s ease}
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.dl-box{background:#0F0F0F;border-radius:12px;padding:28px 32px;color:#fff}
+.dl-title{font-family:'Syne',sans-serif;font-size:19px;font-weight:700;margin-bottom:5px}
+.dl-desc{font-size:13px;opacity:.6;line-height:1.6;margin-bottom:20px;max-width:420px}
+.dl-meta{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.1)}
+.dl-mi{font-size:11px;opacity:.4}
+.dl-mi strong{display:block;font-size:13px;opacity:1;font-weight:500;margin-bottom:1px}
+.dl-btn{display:inline-flex;align-items:center;gap:10px;background:#C41C1C;color:#fff;font-family:'Syne',sans-serif;font-size:15px;font-weight:600;padding:14px 28px;border-radius:8px;text-decoration:none;transition:all .15s}
+.dl-btn:hover{background:#8B1313}
+.dl-legal{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);font-size:11px;opacity:.35;line-height:1.6}
+.about{background:#fff;border-top:1px solid rgba(15,15,15,.1);border-bottom:1px solid rgba(15,15,15,.1);padding:80px 2rem}
+.about-in{max-width:820px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.about h2{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;line-height:1.1;margin-bottom:18px}
+.about p{font-size:15px;color:rgba(15,15,15,.6);line-height:1.8;margin-bottom:14px}
+.pillars{display:flex;flex-direction:column;gap:12px}
+.pillar{padding:18px;border-left:3px solid}
+.pillar.r{background:#FCEAEA;border-color:#C41C1C}
+.pillar.g{background:#FFF8E7;border-color:#B8860B}
+.pillar.n{background:#F9F9F7;border-color:rgba(15,15,15,.2)}
+.pillar-t{font-size:14px;font-weight:500;margin-bottom:3px}
+.pillar-d{font-size:13px;color:rgba(15,15,15,.6);line-height:1.5}
+.limits{max-width:820px;margin:0 auto;padding:60px 2rem;text-align:center}
+.limits-ey{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(15,15,15,.55);margin-bottom:18px}
+.limits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.limit{padding:14px;background:#fff;border:1px solid rgba(15,15,15,.08);border-radius:8px;font-size:13px;color:rgba(15,15,15,.6);text-align:left;display:flex;gap:8px}
+.lx{color:#C41C1C;font-weight:700;flex-shrink:0}
+footer{border-top:1px solid rgba(15,15,15,.1);padding:36px 2rem}
+.footer-in{max-width:820px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+.footer-brand{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:rgba(15,15,15,.55)}
+.footer-legal{font-size:12px;color:rgba(15,15,15,.55);max-width:480px;line-height:1.7}
+.footer-legal strong{color:#0F0F0F}
+.fl{color:#C41C1C;text-decoration:none}
+@media(max-width:600px){.about-in{grid-template-columns:1fr;gap:40px}.hero{padding:100px 1.25rem 56px}.selector{padding:48px 1.25rem 64px}}
+</style>
+</head>
+<body>
+<nav><a href="https://arcorp.tech" class="nav-logo">ARC<em>O</em>RP &middot; MIA</a><span class="nav-pill">Preapertura &middot; Mayo 2026</span></nav>
+<section class="hero">
+<div class="hero-eye">ARCorp / MIA &mdash; Semilla Social</div>
+<h1>EVA<br><em>Veritas</em></h1>
+<p class="hero-sub">Lectura cr&iacute;tica &middot; Verificaci&oacute;n &middot; Informaci&oacute;n responsable</p>
+<p class="hero-desc">Antes de compartir, verifica. Antes de creer, audita. Antes de repetir, piensa.</p>
+<div class="hero-pills"><span class="hp">M&eacute;todo libre &middot; CC0</span><span class="hp">Versi&oacute;n v0.3 RC &middot; Mayo 2026</span><span class="hp">Sin registro &middot; Descarga directa</span></div>
+</section>
+<div class="divider"></div>
+<section class="selector">
+<div class="step-q">1. &iquest;C&oacute;mo quieres usar EVA Veritas?</div>
+<div class="cards" id="c1">
+<div class="card" id="cs" onclick="p1('s')"><span class="card-icon">&#9889;</span><span class="card-name">R&aacute;pido y simple</span><span class="card-note">Quiero probarlo ya, sin configurar nada</span></div>
+<div class="card" id="ci" onclick="p1('i')"><span class="card-icon">&#129302;</span><span class="card-name">Con mi plataforma de IA</span><span class="card-note">ChatGPT, Claude, Gemini u otra</span></div>
+<div class="card" id="ce" onclick="p1('e')"><span class="card-icon">&#128240;</span><span class="card-name">Trabajo editorial</span><span class="card-note">Periodista o verificador de hechos</span></div>
+<div class="card" id="ct" onclick="p1('t')"><span class="card-icon">&#9881;</span><span class="card-name">T&eacute;cnico / Desarrollador</span><span class="card-note">API, modelos locales o RAG</span></div>
+<div class="card" id="ch" onclick="p1('h')"><span class="card-icon">&#128100;</span><span class="card-name">Sin IA</span><span class="card-note">Aplico el m&eacute;todo manualmente</span></div>
+</div>
+<div class="s2wrap off" id="s2">
+<div class="step-q" id="s2q">2. &iquest;Cu&aacute;l plataforma usas?</div>
+<div class="cards" id="c2"></div>
+</div>
+<div class="dl" id="dl">
+<div class="dl-box">
+<div class="dl-title" id="dt"></div>
+<div class="dl-desc" id="dd"></div>
+<div class="dl-meta">
+<div class="dl-mi"><strong>v0.3 RC</strong>Versi&oacute;n</div>
+<div class="dl-mi"><strong id="ds">&mdash;</strong>Tama&ntilde;o</div>
+<div class="dl-mi"><strong>CC0</strong>M&eacute;todo libre</div>
+<div class="dl-mi"><strong id="dos">&mdash;</strong>Sistema</div>
+</div>
+<a class="dl-btn" id="db" href="#" target="_blank">&#8595; Descargar EVA Veritas</a>
+<div class="dl-legal">Candidato RC &middot; no release final. M&eacute;todo CC0. Marca EVA Veritas propiedad de ARCorp/MIA.</div>
+</div>
+</div>
+</section>
+<section class="about">
+<div class="about-in">
+<div><h2>Qu&eacute; hace EVA Veritas</h2><p>Ayuda a revisar informaci&oacute;n antes de compartirla. No decide la verdad por ti &mdash; te ayuda a hacerte mejores preguntas, identificar qu&eacute; falta verificar y reducir el riesgo de difundir afirmaciones sin soporte.</p><p>Separa hechos, opiniones, inferencias y emociones. Emite veredictos prudentes con nivel de confianza y riesgo de compartir.</p></div>
+<div class="pillars">
+<div class="pillar r"><div class="pillar-t">Antes de compartir</div><div class="pillar-d">Verifica. &iquest;Tiene fuente? &iquest;Tiene fecha? &iquest;Es verificable?</div></div>
+<div class="pillar g"><div class="pillar-t">Antes de creer</div><div class="pillar-d">Audita. &iquest;Es opini&oacute;n presentada como hecho? &iquest;Falta contexto?</div></div>
+<div class="pillar n"><div class="pillar-t">Antes de repetir</div><div class="pillar-d">Piensa. &iquest;Qu&eacute; evidencia falta para sostener esta afirmaci&oacute;n?</div></div>
+</div>
+</div>
+</section>
+<section class="limits">
+<div class="limits-ey">Lo que EVA Veritas no hace</div>
+<div class="limits-grid">
+<div class="limit"><span class="lx">&#10005;</span>No declara verdad absoluta</div>
+<div class="limit"><span class="lx">&#10005;</span>No reemplaza periodistas ni expertos</div>
+<div class="limit"><span class="lx">&#10005;</span>No inventa fuentes ni fechas</div>
+<div class="limit"><span class="lx">&#10005;</span>No da asesor&iacute;a legal ni m&eacute;dica</div>
+<div class="limit"><span class="lx">&#10005;</span>No publica acusaciones</div>
+<div class="limit"><span class="lx">&#10005;</span>No es un verificador autom&aacute;tico</div>
+</div>
+</section>
+<footer><div class="footer-in"><div class="footer-brand">ARCorp / MIA &middot; 2026</div><div class="footer-legal"><strong>Licencia:</strong> M&eacute;todo CC0. Marca EVA Veritas propiedad exclusiva de ARCorp/MIA. &middot; <a href="https://arcorp.tech" class="fl">arcorp.tech</a></div></div></footer>
+<script>
+var OS=/Mac|iPhone|iPad|iPod/.test(navigator.userAgent)?'MAC':'WIN';
+var OSL=OS==='MAC'?'macOS':'Windows';
+var B='https://github.com/miateam-lab/eva-veritas-downloads/releases/download/v0.3-RC/';
+var P={
+light:{f:'EVVT_ES_{O}_LIGHT_v0_3_RC.zip',s:'16.7 KB',t:'EVA Veritas Light',d:'La más simple. Copia el prompt y pégalo en cualquier IA. Sin archivos, sin configuración.'},
+chatgpt:{f:'EVVT_ES_{O}_CHATGPT_PROJECT_v0_3_RC.zip',s:'20.3 KB',t:'EVA Veritas · ChatGPT',d:'Para ChatGPT Plus, Team o Enterprise. Usa Projects con memoria persistente.'},
+claude:{f:'EVVT_ES_{O}_CLAUDE_v0_3_RC.zip',s:'22.2 KB',t:'EVA Veritas · Claude',d:'Para Claude Pro con Projects y memoria persistente entre sesiones.'},
+gemini:{f:'EVVT_ES_{O}_GEMINI_v0_3_RC.zip',s:'21.6 KB',t:'EVA Veritas · Gemini',d:'Para Google Gemini con Google One AI Premium.'},
+perplexity:{f:'EVVT_ES_{O}_PERPLEXITY_v0_3_RC.zip',s:'24.9 KB',t:'EVA Veritas · Perplexity',d:'Con búsqueda web integrada. Plan gratuito con límites o Pro.'},
+deepseek:{f:'EVVT_ES_{O}_DEEPSEEK_v0_3_RC.zip',s:'25.7 KB',t:'EVA Veritas · DeepSeek',d:'Modelo gratuito de acceso web.'},
+notebooklm:{f:'EVVT_ES_{O}_NOTEBOOKLM_v0_3_RC.zip',s:'24.5 KB',t:'EVA Veritas · NotebookLM',d:'Google NotebookLM gratuito. Ideal para corpus documentales extensos.'},
+custom_gpt:{f:'EVVT_ES_{O}_CUSTOM_GPT_v0_3_RC.zip',s:'20.4 KB',t:'EVA Veritas · Custom GPT',d:'Para crear un GPT personalizado en OpenAI. Requiere plan Plus.'},
+local:{f:'EVVT_ES_{O}_LOCAL_OFFLINE_v0_3_RC.zip',s:'21.4 KB',t:'EVA Veritas · IA Local',d:'Para Ollama y otros modelos locales. Sin conexión necesaria.'},
+api:{f:'EVVT_ES_{O}_API_AGENTS_v0_3_RC.zip',s:'23.8 KB',t:'EVA Veritas · API / Agentes',d:'Para integración directa vía API.'},
+rag:{f:'EVVT_ES_{O}_DOCUMENTARY_RAG_v0_3_RC.zip',s:'22.6 KB',t:'EVA Veritas · RAG Documental',d:'Para corpus extensos con Retrieval Augmented Generation.'},
+newsroom:{f:'EVVT_ES_{O}_NEWSROOM_v0_3_RC.zip',s:'16.9 KB',t:'EVA Veritas · Sala de redacción',d:'Para periodistas y equipos de verificación.'},
+humano:{f:'EVVT_ES_{O}_HUMAN_DOCUMENTARY_HOST_v0_3_RC.zip',s:'17.2 KB',t:'EVA Veritas · Sin IA',d:'Para aplicar el método manualmente sin ninguna IA.'}
+};
+var IA=[{id:'chatgpt',i:'&#128172;',n:'ChatGPT',no:'Plus, Team o Enterprise'},{id:'claude',i:'&#129309;',n:'Claude',no:'Pro o Team'},{id:'gemini',i:'&#10022;',n:'Gemini',no:'Google One AI Premium'},{id:'perplexity',i:'&#128269;',n:'Perplexity',no:'Gratuito o Pro'},{id:'deepseek',i:'&#128011;',n:'DeepSeek',no:'Gratuito'},{id:'notebooklm',i:'&#128211;',n:'NotebookLM',no:'Google · Gratuito'},{id:'custom_gpt',i:'&#9881;',n:'Custom GPT',no:'Crear GPT propio'}];
+var TEC=[{id:'local',i:'&#128421;',n:'IA Local / Offline',no:'Ollama u otros'},{id:'api',i:'&#128268;',n:'API / Agentes',no:'Integración vía API'},{id:'rag',i:'&#128218;',n:'RAG Documental',no:'Corpus extensos con RAG'}];
+function p1(v){document.querySelectorAll('#c1 .card').forEach(function(c){c.classList.remove('active')});document.getElementById('c'+v).classList.add('active');document.getElementById('dl').classList.remove('on');var s2=document.getElementById('s2');if(v==='s'){s2.classList.add('off');show('light')}else if(v==='e'){s2.classList.add('off');show('newsroom')}else if(v==='h'){s2.classList.add('off');show('humano')}else if(v==='i'){document.getElementById('s2q').textContent='2. ¿Cuál plataforma usas?';build(IA);s2.classList.remove('off')}else if(v==='t'){document.getElementById('s2q').textContent='2. ¿Qué tipo de entorno?';build(TEC);s2.classList.remove('off')}}
+function build(opts){document.getElementById('c2').innerHTML=opts.map(function(o){return'<div class="card" id="c2'+o.id+'" onclick="p2(''+o.id+'')"><span class="card-icon">'+o.i+'</span><span class="card-name">'+o.n+'</span><span class="card-note">'+o.no+'</span></div>';}).join('');}
+function p2(id){document.querySelectorAll('#c2 .card').forEach(function(c){c.classList.remove('active')});var el=document.getElementById('c2'+id);if(el)el.classList.add('active');show(id);}
+function show(id){var p=P[id];if(!p)return;var f=p.f.replace('{O}',OS);document.getElementById('dt').textContent=p.t;document.getElementById('dd').textContent=p.d;document.getElementById('ds').textContent=p.s;document.getElementById('dos').textContent=OSL;document.getElementById('db').href=B+f;var dl=document.getElementById('dl');dl.classList.add('on');dl.scrollIntoView({behavior:'smooth',block:'nearest'});}
+</script>
+</body>
+</html>  
