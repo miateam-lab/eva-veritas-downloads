@@ -1,0 +1,9 @@
+# Forzar descarga de ZIPs
+<FilesMatch "\.zip$">
+  ForceType application/octet-stream
+  Header set Content-Disposition "attachment"
+  Header set X-Content-Type-Options "nosniff"
+</FilesMatch>
+
+# Evitar listado de directorio
+Options -Indexes
