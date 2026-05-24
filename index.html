@@ -172,7 +172,7 @@ function p1(v) {
 }
 function build(opts) {
   document.getElementById('c2').innerHTML = opts.map(function(o){
-    return '<div class="card" id="c2'+o.id+'" onclick="p2(''+o.id+'')"><span class="card-icon">'+o.i+'</span><span class="card-name">'+o.n+'</span><span class="card-note">'+o.no+'</span></div>';
+    return '<div class="card" id="c2'+o.id+'" onclick="p2(\''+o.id+'\')"><span class="card-icon">'+o.i+'</span><span class="card-name">'+o.n+'</span><span class="card-note">'+o.no+'</span></div>';
   }).join('');
 }
 function p2(id) {
